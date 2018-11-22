@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API Project</title>
+</head>
+<style>
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		text-align: center;
+	}
+</style>
+<body>
+
+	<div>
+		<form>
+				<p>
+					Enter list:
+					<input type="text" name="item">
+					<button>Add Item</button>
+				</p>
+		</form>
+	</div>
+
+	<div>
+			<table style="width: 100%"> 
+				<tr>
+						<th>ID</th>
+						<th>Item</th>
+						<th>Date/Time Added</th>
+						<th>Action</th>
+				</tr>
+				<tr>
+						<th>1</th>
+						<th>Bag</th>
+						<th>11/11/11</th>
+						<th>
+							<button>DELETE</button>
+						</th>
+				</tr>
+			</table>
+	</div>
+
+</body>
+
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+	var apiServer = 'http://localhost:5566'
+	$.ajax({
+		url: apiServer,
+		success: function(result) {
+			console.log('result = ', result)
+		},
+		error: function(error) {
+			console.log('error = ', error)
+		}
+	})
+</script>
+
+</html>
